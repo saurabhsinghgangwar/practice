@@ -35,8 +35,24 @@ public class ListNode<T> {
         }
         return head;
     }
+    public static ListNode<Integer> getIntegerCircularList(int n) {
+        ListNode<Integer> processor = new ListNode<>() ;
+        processor.setData(1);
+        processor.setNext(null);
+        ListNode<Integer> head = processor ;
+        ListNode<Integer> temp ;
+        for(int i =2 ; i<= n ; i++){
+            temp = new ListNode<>() ;
+            temp.setData(i);
+            temp.setNext(null);
+            processor.setNext(temp);
+            processor  = temp ;
+        }
+        processor.next = head ;
+        return head;
+    }
 
-    public void printList(ListNode<T> node)
+        public void printList(ListNode<T> node)
     {
         while (node != null) {
             System.out.print(node.data + " ");
