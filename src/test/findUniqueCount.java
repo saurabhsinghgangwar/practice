@@ -8,8 +8,8 @@ public class findUniqueCount {
     public static void main(String[] args) {
 
         // string str
-        String str = "aaabbe";
-       // String str = "ccaaddffecee" ;
+       String str = "aaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccdddddddddddddddeeeeeee";
+       // String str = "ddddddaaatttttyyyyyyyqiiiiiii" ;
 
 
         // Print the count of K length
@@ -47,6 +47,7 @@ public class findUniqueCount {
                 int temp  ;
 
                 if(list.contains(i)){
+                    count++;
                     temp = i-1;
                     list.add(i-1);
                 }
@@ -55,18 +56,17 @@ public class findUniqueCount {
                     list.add(i);
 
                 }
-              if(min > temp) {
+              if(min > temp ) {
                   min = temp;
+
               }
-              if(temp !=0) {
-                  count++;
-              }
+
             }
             sum = sum -i ;
 
 
         }
-        return  count-1 ;
+        return  count ;
         // write your code in Java SE 8
     }
 
